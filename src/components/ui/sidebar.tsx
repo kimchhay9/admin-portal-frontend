@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { FiAlignJustify } from "react-icons/fi";
 
 type SidebarContextValue = {
   open: boolean;
@@ -85,7 +86,7 @@ export function SidebarTrigger({ className }: { className?: string }) {
         className
       )}
     >
-      <span className="text-sm font-bold leading-none">|||</span>
+      <FiAlignJustify className="h-4 w-4" />
     </button>
   );
 }
@@ -167,7 +168,8 @@ export function SidebarMenuButton({
 }) {
   const buttonClassName = cx(
     "flex w-full items-center rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900",
-    isActive && "bg-slate-900 text-white hover:bg-slate-900 hover:text-white",
+    isActive &&
+      "bg-gradient-to-r from-[#0f3a8a] to-[#00a3c8] text-white hover:from-[#0f3a8a] hover:to-[#00a3c8] hover:text-white",
     className
   );
 

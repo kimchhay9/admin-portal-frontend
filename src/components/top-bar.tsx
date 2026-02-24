@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 const titles: Record<string, string> = {
   "/": "Home",
   "/dashboard": "Dashboard",
+  "/system-users": "System Users",
 };
 
 function toLabel(segment: string) {
@@ -32,16 +33,19 @@ export function TopBar() {
   const pathname = usePathname();
   const title = titles[pathname] ?? "Overview";
   const crumbs = getCrumbs(pathname);
+  const showCrumbs = !(crumbs.length === 1 && crumbs[0] === title);
 
   return (
     <header className="sticky top-0 z-10 mx-3 mt-3 rounded-xl border border-slate-200 bg-white px-4 py-3">
       <div className="flex flex-wrap items-center gap-3 md:gap-4">
         <div className="flex min-w-0 items-center gap-3">
-          <SidebarTrigger className="shrink-0" />
+          <SidebarTrigger className="shrink-0 " />
           <div className="min-w-0">
-            <div className="truncate text-xs text-slate-500">
-              {crumbs.join(" / ")}
-            </div>
+            {showCrumbs ? (
+              <div className="truncate text-xs text-slate-500">
+                {crumbs.join(" / ")}
+              </div>
+            ) : null}
             <h1 className="truncate text-sm font-semibold text-slate-900">{title}</h1>
           </div>
         </div>

@@ -13,10 +13,14 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
+import { FaHome } from "react-icons/fa";
+import { FaTachometerAlt } from "react-icons/fa";
+import { FaUsers } from "react-icons/fa";
 
 const navItems = [
-  { title: "Home", href: "/", short: "H" },
-  { title: "Dashboard", href: "/dashboard", short: "D" },
+  { title: "Home", href: "/", short: "H", icon: <FaHome className="h-4 w-4" /> },
+  { title: "Dashboard", href: "/dashboard", short: "D", icon: <FaTachometerAlt className="h-4 w-4" /> },
+  { title: "System Users", href: "/system-users", short: "SU", icon: <FaUsers className="h-4 w-4" /> },
 ];
 
 export function AppSidebar() {
@@ -40,12 +44,19 @@ export function AppSidebar() {
               {navItems.map((item) => (
                 <SidebarMenuItem key={item.href}>
                   <SidebarMenuButton asChild isActive={pathname === item.href}>
-                    <Link href={item.href} className="gap-3">
-                      <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded bg-slate-200 text-xs font-semibold text-slate-700">
-                        {item.short}
+                    <Link href={item.href}>
+                      <span
+                        className={
+                          item.icon
+                            ? "inline-flex h-6 w-6 shrink-0 items-center justify-center text-slate-700"
+                            : "inline-flex h-6 w-6 shrink-0 items-center justify-center rounded bg-slate-200 text-xs font-semibold text-slate-700"
+                        }
+                      >
+                        {item.icon ?? item.short}
                       </span>
                       {open ? <span>{item.title}</span> : null}
                     </Link>
+
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
