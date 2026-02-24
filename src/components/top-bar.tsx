@@ -6,7 +6,11 @@ import { usePathname } from "next/navigation";
 const titles: Record<string, string> = {
   "/": "Home",
   "/dashboard": "Dashboard",
+  "/users": "Users",
   "/system-users": "System Users",
+  "/regions": "Regions",
+  "/roles": "Roles",
+  "/permissions": "Permissions",
 };
 
 function toLabel(segment: string) {
