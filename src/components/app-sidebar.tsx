@@ -20,6 +20,9 @@ import { FaUserShield } from "react-icons/fa";
 import { FaKey } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaCogs } from "react-icons/fa";
+import { FaMicrochip } from "react-icons/fa";
+import { FaPercent } from "react-icons/fa";
 
 const navItems = [
   { title: "Home", href: "/", short: "H", icon: <FaHome className="h-4 w-4" /> },
@@ -27,6 +30,9 @@ const navItems = [
   { title: "Users", href: "/users", short: "U", icon: <FaUser className="h-4 w-4" /> },
   { title: "System Users", href: "/system-users", short: "SU", icon: <FaUsers className="h-4 w-4" /> },
   { title: "Regions", href: "/regions", short: "RG", icon: <FaMapMarkerAlt className="h-4 w-4" /> },
+  { title: "Matching Rules", href: "/matching-rules", short: "MR", icon: <FaPercent className="h-4 w-4" /> },
+  { title: "Device Settings", href: "/device-settings", short: "DS", icon: <FaCogs className="h-4 w-4" /> },
+  { title: "Firmwares", href: "/firmwares", short: "FW", icon: <FaMicrochip className="h-4 w-4" /> },
   { title: "Roles", href: "/roles", short: "R", icon: <FaUserShield className="h-4 w-4" /> },
   { title: "Permissions", href: "/permissions", short: "P", icon: <FaKey className="h-4 w-4" /> },
 ];

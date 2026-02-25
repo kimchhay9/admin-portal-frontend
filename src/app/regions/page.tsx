@@ -35,8 +35,8 @@ const initialRegions: RegionItem[] = [
   },
   {
     id: "reg-1003",
-    name: "Thailand",
-    currency: "THB",
+    name: "China",
+    currency: "CNY",
     status: "Disabled",
     createdAt: "Mar 11, 2025",
   },

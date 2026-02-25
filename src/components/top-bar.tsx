@@ -9,6 +9,7 @@ const titles: Record<string, string> = {
   "/users": "Users",
   "/system-users": "System Users",
   "/regions": "Regions",
+  "/device-settings": "Device Settings",
   "/roles": "Roles",
   "/permissions": "Permissions",
 };
